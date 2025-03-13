@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking History - Vehicle Booking System</title>
+    <link rel="stylesheet" href="css/HomeStyle.css">
+    <link rel="stylesheet" href="css/history.css">
+</head>
+<body>
+<nav class="navbar">
+    <div class="nav-brand">Vehicle Booking System</div>
+    <ul class="nav-menu">
+        <li class="nav-item"><a href="Home.html">Home</a></li>
+        <li class="nav-item"><a href="booking.html">Book Vehicle</a></li>
+        <li class="nav-item active"><a href="history.html">History</a></li>
+    </ul>
+    <div class="nav-user">
+        <span id="user-name">User</span>
+        <button id="logout-button">Logout</button>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="history-section">
+        <h1>Booking History</h1>
+        <div class="table-container">
+            <table id="booking-history-table">
+                <thead>
+                    <tr>
+                        <th>Vehicle</th>
+                        <th>Driver</th>
+                        <th>Pickup Location</th>
+                        <th>Destination</th>
+                        <th>Date</th>
+                        <th>Rental Time (h)</th>
+                        <th>Distance (km)</th>
+                        <th>Price ($)</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="booking-history-body">
+                    <!-- Booking records will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="js/history.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Vehicle Booking System</title>
+    <link rel="stylesheet" href="css/HomeStyle.css">
+</head>
+<body>
+<nav class="navbar">
+    <div class="nav-brand">Vehicle Booking System</div>
+    <ul class="nav-menu">
+        <li class="nav-item active"><a href="Home.html">Home</a></li>
+        <li class="nav-item"><a href="booking.html">Book Vehicle</a></li>
+        <li class="nav-item"><a href="history.html">History</a></li>
+    </ul>
+    <div class="nav-user">
+        <span id="user-name">User</span>
+        <button id="logout-button">Logout</button>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="welcome-section">
+        <h1>Welcome to the Vehicle Booking System</h1>
+        <p>Hello, <span id="welcome-user-name">User</span>!</p>
+        <p>You are logged in as: <span id="user-role">User</span></p>
+    </div>
+
+    <div class="dashboard">
+        <div class="dashboard-card">
+            <h2>Quick Actions</h2>
+            <div class="action-buttons">
+                <a href="booking.html" class="action-button">Book a Vehicle</a>
+                <a href="history.html" class="action-button">View Booking History</a>
+            </div>
+        </div>
+
+        <div class="dashboard-card admin-only hidden">
+            <h2>Admin Panel</h2>
+            <div class="action-buttons">
+                <a href="admin.html" class="action-button">Manage Drivers & Vehicles</a>
+                <a href="staff.html" class="action-button">Manage Staff</a>
+                <a href="history.html" class="action-button">View All Bookings</a>
+            </div>
+            <div class="admin-stats">
+                <div class="stat-item">
+                    <h3>Active Drivers</h3>
+                    <p id="active-drivers-count">0</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Total Bookings</h3>
+                    <p id="total-bookings-count">0</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Available Vehicles</h3>
+                    <p id="available-vehicles-count">0</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/Home.js"></script>
+</body>
+</html>

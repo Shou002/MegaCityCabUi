@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Management - Vehicle Booking System</title>
+    <link rel="stylesheet" href="css/HomeStyle.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+<nav class="navbar">
+    <div class="nav-brand">Vehicle Booking System</div>
+    <ul class="nav-menu">
+        <li class="nav-item"><a href="Home.html">Home</a></li>
+        <li class="nav-item"><a href="booking.html">Book Vehicle</a></li>
+        <li class="nav-item"><a href="history.html">History</a></li>
+        <li class="nav-item"><a href="admin.html">Manage Drivers & Vehicles</a></li>
+        <li class="nav-item active"><a href="staff.html">Manage Staff</a></li>
+    </ul>
+    <div class="nav-user">
+        <span id="user-name">Admin</span>
+        <button id="logout-button">Logout</button>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="admin-section">
+        <h1>Manage Staff Members</h1>
+        <div class="form-container">
+            <form id="staff-form" class="admin-form">
+                <div class="form-section">
+                    <h2>Staff Information</h2>
+                    <div class="form-group">
+                        <label for="staff-name">Full Name</label>
+                        <input type="text" id="staff-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="staff-email">Email</label>
+                        <input type="email" id="staff-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="staff-password">Password</label>
+                        <input type="password" id="staff-password" required>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="submit-button">Add Staff Member</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="table-container">
+            <h2>Existing Staff Members</h2>
+            <table id="staff-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                    </tr>
+                </thead>
+                <tbody id="staff-table-body">
+                    <!-- Data will be populated here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="js/staff.js"></script>
+</body>
+</html>

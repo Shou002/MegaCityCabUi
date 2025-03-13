@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Vehicle Booking System</title>
+    <link rel="stylesheet" href="css/HomeStyle.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+<nav class="navbar">
+    <div class="nav-brand">Vehicle Booking System</div>
+    <ul class="nav-menu">
+        <li class="nav-item"><a href="Home.html">Home</a></li>
+        <li class="nav-item"><a href="booking.html">Book Vehicle</a></li>
+        <li class="nav-item"><a href="history.html">History</a></li>
+        <li class="nav-item active"><a href="admin.html">Manage Drivers & Vehicles</a></li>
+    </ul>
+    <div class="nav-user">
+        <span id="user-name">Admin</span>
+        <button id="logout-button">Logout</button>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="admin-section">
+        <h1>Manage Drivers & Vehicles</h1>
+        <div class="form-container">
+            <form id="admin-form" class="admin-form">
+                <div class="form-section driver-section">
+                    <h2>Driver Information</h2>
+                    <div class="form-group">
+                        <label for="driver-name">Driver Name</label>
+                        <input type="text" id="driver-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="driver-age">Age</label>
+                        <input type="number" id="driver-age" min="18" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="driver-address">Address</label>
+                        <input type="text" id="driver-address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="driver-phone">Phone Number</label>
+                        <input type="tel" id="driver-phone" required>
+                    </div>
+                </div>
+
+                <div class="form-section vehicle-section">
+                    <h2>Vehicle Information</h2>
+                    <div class="form-group">
+                        <label for="vehicle-name">Vehicle Name</label>
+                        <input type="text" id="vehicle-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="vehicle-type">Vehicle Type</label>
+                        <select id="vehicle-type" required>
+                            <option value="">Select Type</option>
+                            <option value="SEDAN">Sedan</option>
+                            <option value="SUV">SUV</option>
+                            <option value="VAN">Van</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="vehicle-capacity">Capacity</label>
+                        <input type="number" id="vehicle-capacity" min="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="vehicle-price">Price per KM ($)</label>
+                        <input type="number" id="vehicle-price" min="0" step="0.01" required>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="submit-button">Add Driver & Vehicle</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="table-container">
+            <h2>Existing Drivers & Vehicles</h2>
+            <table id="admin-table">
+                <thead>
+                    <tr>
+                        <th>Driver Name</th>
+                        <th>Age</th>
+                        <th>Phone</th>
+                        <th>Vehicle Name</th>
+                        <th>Type</th>
+                        <th>Capacity</th>
+                        <th>Price/KM</th>
+                    </tr>
+                </thead>
+                <tbody id="admin-table-body">
+                    <!-- Data will be populated here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="js/admin.js"></script>
+</body>
+</html>
