@@ -2,14 +2,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const adminForm = document.getElementById('admin-form');
     const tableBody = document.getElementById('admin-table-body');
 
-    // Load existing drivers and vehicles
+    // Load drivers and vehicles
     fetchDriversAndVehicles();
 
-    // Handle form submission
+    // Handle submission
     adminForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        // First add the driver
+        // Add the driver
         const driverData = new URLSearchParams();
         driverData.append('name', document.getElementById('driver-name').value);
         driverData.append('age', document.getElementById('driver-age').value);
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const driverResult = await driverResponse.json();
             const driverId = driverResult.driverId;
 
-            // Then add the vehicle with the driver ID
+            // Add the vehicle with the driver ID
             const vehicleData = new URLSearchParams();
             vehicleData.append('veh_name', document.getElementById('vehicle-name').value);
             vehicleData.append('type', document.getElementById('vehicle-type').value);
@@ -143,6 +143,5 @@ function displayDriversAndVehicles(data) {
 }
 
 async function editDriverVehicle(driverId) {
-    // Implement edit functionality
     console.log('Edit driver/vehicle with ID:', driverId);
 }

@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Check if user is already logged in
     checkLoginStatus();
 
-    // Form switching functions
     const showLoginForm = () => {
         registerForm.classList.add('hidden');
         loginForm.classList.remove('hidden');
@@ -19,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
         registerForm.classList.remove('hidden');
     };
 
-    // Form switching function that can be called from other functions
     window.toggleForm = function(formName) {
         if (formName === 'login') {
             showLoginForm();
@@ -28,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Event listeners
     switchToRegister.addEventListener('click', (e) => {
         e.preventDefault();
         showRegisterForm();
@@ -44,7 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
 function checkLoginStatus() {
     const userData = localStorage.getItem('userData');
     if (userData) {
-        // User is already logged in, redirect to Home
         window.location.href = "Home.html";
     }
 }
@@ -55,7 +51,6 @@ function login() {
     const name = document.getElementById('login-email').value;
     const password = document.getElementById('login-password').value;
 
-    // Basic validation
     if (!name || !password) {
         alert("Please fill in all fields");
         return;
@@ -63,13 +58,11 @@ function login() {
 
     console.log("Attempting to login with:", name);
 
-    // Use URLSearchParams to handle URL encoding
     const formData = new URLSearchParams();
     formData.append('name', name);
     formData.append('password', password);
 
     try {
-        // Use the full backend URL
         fetch('http://localhost:8080/users/login', {
             method: 'POST',
             headers: {
@@ -90,7 +83,7 @@ function login() {
 
                 // Save user data to local storage
                 const userData = {
-                    id: data.id, // Add user ID
+                    id: data.id,
                     username: data.name || name,
                     role: data.role || 'user',
                     loggedInAt: new Date().toISOString()
@@ -99,7 +92,6 @@ function login() {
                 localStorage.setItem('userData', JSON.stringify(userData));
                 console.log("User data saved to local storage:", userData);
 
-                // Redirect to home page
                 window.location.href = "Home.html";
             })
             .catch(error => {
@@ -126,7 +118,6 @@ function register() {
         return;
     }
 
-    // Basic validation
     if (!name || !email || !password) {
         alert("Please fill in all fields");
         return;

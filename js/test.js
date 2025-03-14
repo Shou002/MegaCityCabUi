@@ -2,12 +2,10 @@ function login() {
     const name = document.getElementById('login-name').value;
     const password = document.getElementById('login-password').value;
 
-    // Use URLSearchParams to handle URL encoding
     const formData = new URLSearchParams();
     formData.append('name', name);
     formData.append('password', password);
 
-    // Use the full backend URL
     fetch('http://localhost:8080/users/login', {
         method: 'POST',
         headers: {

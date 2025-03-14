@@ -68,13 +68,13 @@ bookingForm.addEventListener('submit', async (e) => {
     console.log('Parsed vehicleId:', vehicleId);
     console.log('Parsed driverId:', driverId);
 
-    // Validate vehicle and driver IDs
+
     if (isNaN(vehicleId) || isNaN(driverId)) {
         alert('Invalid vehicle or driver data. Please try selecting the vehicle again.');
         return;
     }
 
-    // Validate pickup location
+
     const pickupLocation = document.getElementById('pickup-location').value.trim();
     if (!pickupLocation) {
         alert('Please enter a pickup location');

@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Load existing staff members
     fetchStaffMembers();
 
-    // Handle form submission
     staffForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
@@ -63,31 +62,4 @@ function displayStaffMembers(data) {
         `;
         tableBody.appendChild(tr);
     });
-}
-
-async function editStaff(staffId) {
-    // Implement edit functionality
-    console.log('Edit staff member with ID:', staffId);
-}
-
-async function deleteStaff(staffId) {
-    if (!confirm('Are you sure you want to delete this staff member?')) {
-        return;
-    }
-
-    try {
-        const response = await fetch(`http://localhost:8080/admin/delete-staff/${staffId}`, {
-            method: 'DELETE'
-        });
-
-        if (response.ok) {
-            alert('Staff member deleted successfully!');
-            fetchStaffMembers();
-        } else {
-            alert('Failed to delete staff member. Please try again.');
-        }
-    } catch (error) {
-        console.error('Error deleting staff member:', error);
-        alert('An error occurred. Please try again.');
-    }
 }
